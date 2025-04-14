@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from database.db_connector import connect_to_database
 from database.db_connector import create_program_table
 
+
 def parse_data(html, date):
     soup = BeautifulSoup(html, 'html.parser')
     # soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
@@ -45,14 +46,14 @@ def parse_data(html, date):
                         # Печатаем результат
 
                         # programs.append(f"{current_program}|{formatted_datetime}|{description}")
-                        #with conn.cursor() as cur:
+                        # with conn.cursor() as cur:
                         #    cur.execute(
                         #        'INSERT INTO oldtvprogram (current_program, program_datetime, program_description) VALUES '
                         #        '(%s, %s, %s)',
                         #        (current_program, formatted_datetime, description)
                         #    )
                         #    conn.commit()
-        print (date)
+        print(date)
         conn.close()
 
         return programs
